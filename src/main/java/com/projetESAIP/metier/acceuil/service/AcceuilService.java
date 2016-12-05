@@ -15,4 +15,10 @@ public class AcceuilService {
     public ArrayList<Classe> getClasses() {
         return classeDao.findAll();
     }
+
+    public void createClasse() {
+        Classe classe = new Classe();
+        classe.setNom("George");
+        classeDao.save(classe);
+    }
 }

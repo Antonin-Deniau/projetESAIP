@@ -21,8 +21,9 @@ public class AcceuilController {
 
   @RequestMapping(value = "/", method = RequestMethod.GET)
   public String acceuil(Map<String, ArrayList<Classe>> model) {
+    acceuilService.createClasse();
+    acceuilService.createClasse();
     ArrayList<Classe> classes = acceuilService.getClasses();
-
     model.put("classes", classes);
 
     return "home";
