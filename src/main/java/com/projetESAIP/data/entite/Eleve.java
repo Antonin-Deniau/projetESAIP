@@ -2,12 +2,10 @@ package com.projetESAIP.data.entite;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import java.util.ArrayList;
 
 @Entity
-public class Classe {
+public class Eleve {
     @Id private Integer id;
     private String nom;
-    @OneToMany private ArrayList<Eleve> eleves;
+    private String prenom;
 }
