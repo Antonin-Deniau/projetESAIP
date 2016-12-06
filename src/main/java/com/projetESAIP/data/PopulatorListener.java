@@ -24,8 +24,8 @@ public class PopulatorListener implements ApplicationListener<ContextRefreshedEv
         if (!alreadyPopulated) {
             Populator populator = Populator.getPopulator();
 
-            Classe m1  = populator.createClasseWithName("M1");
-            Classe m2  = populator.createClasseWithName("M2");
+            Classe m1 = populator.createClasseWithName("M1");
+            Classe m2 = populator.createClasseWithName("M2");
 
             m1.setEleves(populator.createM1Eleves());
             m2.setEleves(populator.createM2Eleves());

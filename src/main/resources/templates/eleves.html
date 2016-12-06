@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org"
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
       th:include="fragments/layout :: page">
 <head>
     <title></title>
@@ -14,7 +14,9 @@
         <div th:if="${classe != null}">
             <h3>Classe <span th:text="${classe.nom}"></span></h3>
             <div class="list-group">
-                <a th:each="item : ${classe.eleves}" th:text="${item.nom}" th:href="@{/classes/{classeId}/eleves/{eleveId}(eleveId=${item.id}, classeId=${classe.id})}" th:class="list-group-item">Nom</a>
+                <a th:each="item : ${classe.eleves}" th:text="${item.nom}"
+                   th:href="@{/classes/{classeId}/eleves/{eleveId}(eleveId=${item.id}, classeId=${classe.id})}"
+                   th:class="list-group-item">Nom</a>
             </div>
         </div>
     </div>

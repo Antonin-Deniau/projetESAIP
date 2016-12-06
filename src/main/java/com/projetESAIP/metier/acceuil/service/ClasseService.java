@@ -15,6 +15,7 @@ public class ClasseService {
     public ArrayList<Classe> getClasses() {
         return classeDao.findAll();
     }
+
     public Classe getClasseById(Integer id) {
         return classeDao.findOne(id);
     }

@@ -7,10 +7,13 @@ import javax.persistence.ManyToOne;
 
 @Entity
 public class Eleve {
-    @Id @GeneratedValue private Integer id;
+    @Id
+    @GeneratedValue
+    private Integer id;
     private String nom;
     private String prenom;
-    @ManyToOne private Classe classe;
+    @ManyToOne
+    private Classe classe;
 
     public Integer getId() {
         return id;

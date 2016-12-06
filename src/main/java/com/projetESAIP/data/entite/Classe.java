@@ -5,10 +5,13 @@ import java.util.List;
 
 @Entity
 public class Classe {
-    @Id @GeneratedValue private Integer id;
+    @Id
+    @GeneratedValue
+    private Integer id;
     private String nom;
 
-    @OneToMany(cascade = {CascadeType.ALL}) private List<Eleve> eleves;
+    @OneToMany(cascade = {CascadeType.ALL})
+    private List<Eleve> eleves;
 
     public Integer getId() {
         return id;
@@ -30,11 +33,11 @@ public class Classe {
         return eleves;
     }
 
-    public void addEleve(Eleve eleve) {
-        this.eleves.add(eleve);
-    }
-
     public void setEleves(List<Eleve> eleves) {
         this.eleves = eleves;
+    }
+
+    public void addEleve(Eleve eleve) {
+        this.eleves.add(eleve);
     }
 }

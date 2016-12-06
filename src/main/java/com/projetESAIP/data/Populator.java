@@ -1,12 +1,15 @@
 package com.projetESAIP.data;
 
-import com.projetESAIP.data.entite.*;
+import com.projetESAIP.data.entite.Classe;
+import com.projetESAIP.data.entite.Eleve;
+
 import java.util.ArrayList;
 
 public class Populator {
     private static Populator populator;
 
-    private Populator() {}
+    private Populator() {
+    }
 
     public static Populator getPopulator() {
         if (populator == null) {
@@ -43,7 +46,7 @@ public class Populator {
     }
 
     Eleve createEleveWithName(String firstname, String lastname) {
-        Eleve eleve = new  Eleve();
+        Eleve eleve = new Eleve();
         eleve.setNom(firstname);
         eleve.setPrenom(lastname);
 

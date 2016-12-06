@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class EleveController {
+    final ClasseService classeService;
+
     @Autowired
     public EleveController(ClasseService classeService) {
         this.classeService = classeService;
     }
-
-    final ClasseService classeService;
 
     @RequestMapping(value = "/classes/{id}", method = RequestMethod.GET)
     public String eleves(ModelMap model, @PathVariable("id") Integer id) {
