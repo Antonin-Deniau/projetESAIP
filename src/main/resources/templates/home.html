@@ -1,29 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      th:include="fragments/layout :: page">
 <head>
-    <meta charset="UTF-8"></meta>
-    <title>Projet ESAIP</title>
+    <title></title>
 </head>
-
 <body>
-<div th:replace="fragments/header :: header">&nbsp;</div>
-<div class="container">
-    <div>
-        <h1>
-            Application de boite a idée de l'ESAIP
-        </h1>
+<div th:fragment="content">
+
+    <div class="container">
+        <h1>Application de boite a idée de l'ESAIP</h1>
         <hr/>
 
         <div th:if="${classes != null}">
-            <h1>Classes</h1>
-            <ul>
-                <li th:each="item : ${classes}" th:text="${item.nom}">Nom</li>
-            </ul>
+            <h3>Classes</h3>
+            <div class="list-group">
+                <a th:each="item : ${classes}" th:text="${item.nom}" th:class="list-group-item">Nom</a>
+            </div>
         </div>
-
     </div>
-    <div th:replace="fragments/footer :: footer"></div>
 </div>
-
 </body>
 </html>
