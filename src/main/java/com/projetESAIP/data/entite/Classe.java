@@ -1,17 +1,14 @@
 package com.projetESAIP.data.entite;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import java.util.ArrayList;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Classe {
     @Id @GeneratedValue private Integer id;
     private String nom;
 
-    @OneToMany private ArrayList<Eleve> eleves;
+    @OneToMany(cascade = {CascadeType.ALL}) private List<Eleve> eleves;
 
     public Integer getId() {
         return id;
@@ -29,7 +26,7 @@ public class Classe {
         this.nom = nom;
     }
 
-    public ArrayList<Eleve> getEleves() {
+    public List<Eleve> getEleves() {
         return eleves;
     }
 
@@ -37,7 +34,7 @@ public class Classe {
         this.eleves.add(eleve);
     }
 
-    public void setEleves(ArrayList<Eleve> eleves) {
+    public void setEleves(List<Eleve> eleves) {
         this.eleves = eleves;
     }
 }
