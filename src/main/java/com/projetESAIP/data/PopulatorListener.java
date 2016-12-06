@@ -1,7 +1,7 @@
 package com.projetESAIP.data;
 
-import com.projetESAIP.data.acces.ClasseDao;
-import com.projetESAIP.data.entite.Classe;
+import com.projetESAIP.data.daos.ClasseDao;
+import com.projetESAIP.data.entites.Classe;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;

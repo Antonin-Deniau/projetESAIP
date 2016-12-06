@@ -1,6 +1,6 @@
-package com.projetESAIP.data.acces;
+package com.projetESAIP.data.daos;
 
-import com.projetESAIP.data.entite.Classe;
+import com.projetESAIP.data.entites.Classe;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.ArrayList;

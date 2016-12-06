@@ -1,7 +1,7 @@
 package com.projetESAIP.data;
 
-import com.projetESAIP.data.entite.Classe;
-import com.projetESAIP.data.entite.Eleve;
+import com.projetESAIP.data.entites.Classe;
+import com.projetESAIP.data.entites.Eleve;
 
 import java.util.ArrayList;
 

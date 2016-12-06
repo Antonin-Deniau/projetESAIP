@@ -1,4 +1,4 @@
-package com.projetESAIP.data.entite;
+package com.projetESAIP.data.entites;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
