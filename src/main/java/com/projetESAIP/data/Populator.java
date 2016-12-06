@@ -6,6 +6,8 @@ import java.util.ArrayList;
 public class Populator {
     private static Populator populator;
 
+    private Populator() {}
+
     public static Populator getPopulator() {
         if (populator == null) {
             populator = new Populator();

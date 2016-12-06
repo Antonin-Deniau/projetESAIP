@@ -8,11 +8,14 @@ import javax.annotation.Resource;
 import java.util.ArrayList;
 
 @Service(value = "acceuilService")
-public class AcceuilService {
+public class ClasseService {
     @Resource
     private ClasseDao classeDao;
 
     public ArrayList<Classe> getClasses() {
         return classeDao.findAll();
+    }
+    public Classe getClasseById(Integer id) {
+        return classeDao.findOne(id);
     }
 }
