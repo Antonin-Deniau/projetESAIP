@@ -1,7 +1,7 @@
 package com.projetESAIP.metier.acceuil.communication;
 
-import com.projetESAIP.data.entite.Classe;
-import com.projetESAIP.metier.acceuil.service.ClasseService;
+import com.projetESAIP.data.entites.Classe;
+import com.projetESAIP.domain.services.ClasseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
