@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      th:include="fragments/layout :: page">
+<head>
+    <title></title>
+</head>
+<body>
+<div th:fragment="content">
+    <div class="container">
+        <h1>Application de boite a idée de l'ESAIP</h1>
+        <hr/>
+
+        <div th:if="${classe != null}">
+            <h3>Classe <span th:text="${classe.nom}"></span></h3>
+            <div class="list-group">
+                <a th:each="item : ${classe.eleves}" th:text="${item.nom}"
+                   th:href="@{/classes/{classeId}/eleves/{eleveId}(eleveId=${item.id}, classeId=${classe.id})}"
+                   th:class="list-group-item">Nom</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
