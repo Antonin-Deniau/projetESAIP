@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      th:include="fragments/layout :: page">
+<head>
+    <title></title>
+</head>
+<body>
+<div th:fragment="content">
+    <div class="container">
+        <h1>Apportez votre idée</h1>
+        <hr/>
+
+        <form method="post" action="/thanks">
+            Titre de votre idée:
+            <input type="text" name="title_idea"/><br/>
+            Description:
+            <input type="text" name="desc_idea"/><br/>
+            <input type="submit" value="Envoyer"/>
+        </form>
+    </div>
+</div>
+</body>
+</html>

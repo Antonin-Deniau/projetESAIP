@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns="http://www.w3.org/1999/xhtml"
+      th:include="fragments/layout :: page">
+<head>
+    <title></title>
+</head>
+<body>
+<div th:fragment="content">
+    <div class="container">
+        <h1>Merci</h1>
+        <hr/>
+
+        Merci de votre contribution!! A bientôt!
+
+        <a th:href="@{/}">Go to home!</a>
+    </div>
+</div>
+</body>
+</html>
