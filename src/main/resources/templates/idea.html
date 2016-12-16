@@ -10,13 +10,16 @@
     <div class="container">
         <h1>Apportez votre idée</h1>
         <hr/>
-
-        <form method="post" action="/thanks">
-            Titre de votre idée:
-            <input type="text" name="title_idea"/><br/>
-            Description:
-            <input type="text" name="desc_idea"/><br/>
-            <input type="submit" value="Envoyer"/>
+        <form method="post" th:action="@{/classes/eleves/{eleveId}/thanks(eleveId=${id})}">
+            <div class="form-group">
+                <label for="titleIdea">Titre de votre idée:</label>
+                <input type="text" class="form-control" id="titleIdea" placeholder="title" name="title_idea"/>
+            </div>
+            <div class="form-group">
+                <label for="descIdea">Description de votre idée:</label>
+                <textarea class="form-control" id="descIdea" placeholder="description" name="desc_idea"></textarea>
+            </div>
+            <button type="submit" class="btn btn-default">Envoyer</button>
         </form>
     </div>
 </div>

@@ -1,11 +1,10 @@
 package com.projetESAIP.domain.controllers;
 
 import com.projetESAIP.data.entites.Classe;
-import com.projetESAIP.data.entites.Eleve;
 import com.projetESAIP.data.entites.Idea;
 import com.projetESAIP.domain.services.ClasseService;
+import com.projetESAIP.domain.services.EleveService;
 import com.projetESAIP.domain.services.IdeaService;
-import org.hibernate.annotations.Parameter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -14,18 +13,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import javax.validation.Valid;
-import java.util.Map;
-
 @Controller
 public class IdeaController {
     final ClasseService classeService;
     final IdeaService ideaService;
+    final EleveService eleveService;
 
     @Autowired
-    public IdeaController(ClasseService classeService, IdeaService ideaService) {
+    public IdeaController(ClasseService classeService, IdeaService ideaService, EleveService eleveService) {
         this.classeService = classeService;
         this.ideaService = ideaService;
+        this.eleveService = eleveService;
     }
 
     @RequestMapping(value = "/classes", method = RequestMethod.GET)
@@ -41,16 +39,18 @@ public class IdeaController {
         return "eleves";
     }
 
-    @RequestMapping(value = "/classes/{id_cl}/eleves/{id_el}", method = RequestMethod.GET)
-    public String enterIdea(ModelMap model, @PathVariable("id_cl") Integer id_cl, @PathVariable("id_el") Integer id_el) {
+    @RequestMapping(value = "/classes/eleves/{id}", method = RequestMethod.GET)
+    public String enterIdea(ModelMap model, @PathVariable("id") Integer id) {
+        model.put("id", id);
         return "idea";
     }
 
-    @RequestMapping(value = "/thanks", method = RequestMethod.POST)
-    public String thanks(@RequestParam(value = "title_idea") String title,@RequestParam(value = "desc_idea") String desc, ModelMap model) {
+    @RequestMapping(value = "/classes/eleves/{id}/thanks", method = RequestMethod.POST)
+    public String thanks(@RequestParam(value = "title_idea") String title,@RequestParam(value = "desc_idea") String desc, @PathVariable("id") Integer id, ModelMap model) {
         Idea idea = new Idea();
         idea.setTitle(title);
         idea.setDescription(desc);
+        idea.setEleve(eleveService.getEleveById(id));
         ideaService.addIdea(idea);
         return "thanks";
     }

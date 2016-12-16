@@ -10,13 +10,21 @@
     <div class="container">
         <h1>Application de boite a idée de l'ESAIP</h1>
         <hr/>
-        <a th:href="@{/classes}">Ajouter une idée</a>
-        <div th:if="${ideas != null}" class="list-group">
-            <h3>Ideas
-            </h3>
-            <div th:each="item : ${ideas}" th:class="list-group-item">
-                Titre: <label th:text="${item.title}"/><br/>
-                Description: <label th:text="${item.description}"/>
+        <a class="btn btn-default" th:href="@{/classes}">Ajouter une idée</a>
+        <br/>
+
+        <div th:if="${ideas != null}" th:class="list-group">
+            <h2>Ideas</h2>
+            <div th:each="item : ${ideas}" class="panel panel-default">
+                <div th:class="panel-heading">
+                    <h3 th:class="panel-title" th:text="${item.title}"></h3>
+                    <div style="font-size: 10px">
+                        Write by: <label th:if="${item.eleve != null}" th:text="${item.eleve.nom}"/><label th:if="${item.eleve == null}" th:text="Anonymous"/>
+                    </div>
+                </div>
+                <div th:class="panel-body">
+                    <span th:text="${item.description}"></span>
+                </div>
             </div>
         </div>
     </div>
