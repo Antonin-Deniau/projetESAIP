@@ -1,9 +1,7 @@
 package com.projetESAIP.data.entites;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Eleve {
@@ -12,8 +10,12 @@ public class Eleve {
     private Integer id;
     private String nom;
     private String prenom;
+
     @ManyToOne
     private Classe classe;
+
+    @OneToMany(cascade = {CascadeType.ALL})
+    private List<Idea> ideas;
 
     public Integer getId() {
         return id;

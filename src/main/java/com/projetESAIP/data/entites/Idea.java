@@ -11,8 +11,7 @@ public class Idea {
     private String title;
     private String description;
 
-    @OneToOne
-    @JoinColumn(name="eleve_id")
+    @ManyToOne
     private Eleve eleve;
 
     public Idea() {
