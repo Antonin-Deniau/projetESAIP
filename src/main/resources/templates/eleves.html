@@ -14,7 +14,7 @@
         <div th:if="${classe != null}">
             <h3>Classe <span th:text="${classe.nom}"></span></h3>
             <div class="list-group">
-                <a th:each="item : ${classe.eleves}" th:text="${item.nom}"
+                <a th:each="item : ${classe.eleves}" th:text="${item.nom} + ' ' + ${item.prenom}"
                    th:href="@{/classes/eleves/{eleveId} (eleveId=${item.id})}"
                    th:class="list-group-item">Nom</a>
             </div>

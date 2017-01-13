@@ -19,7 +19,7 @@
                 <div th:class="panel-heading">
                     <h3 th:class="panel-title" th:text="${item.title}"></h3>
                     <div style="font-size: 10px">
-                        Write by: <label th:if="${item.eleve != null}" th:text="${item.eleve.nom}"/><label th:if="${item.eleve == null}" th:text="Anonymous"/>
+                        Write by: <label th:if="${item.eleve != null}" th:text="${item.eleve.nom} + ' ' + ${item.eleve.prenom}"/><label th:if="${item.eleve == null}" th:text="Anonymous"/>
                     </div>
                 </div>
                 <div th:class="panel-body">

@@ -2,6 +2,7 @@ package com.projetESAIP.data;
 
 import com.projetESAIP.data.entites.Classe;
 import com.projetESAIP.data.entites.Eleve;
+import com.projetESAIP.data.entites.Idea;
 
 import java.util.ArrayList;
 
@@ -21,9 +22,9 @@ public class Populator {
     public ArrayList<Eleve> createM2Eleves() {
         ArrayList eleves = new ArrayList();
 
-        eleves.add(this.createEleveWithName("Andre", "Piere"));
+        eleves.add(this.createEleveWithName("ANDRE", "Pierre"));
         eleves.add(this.createEleveWithName("Donio", "Antonin"));
-        eleves.add(this.createEleveWithName("Jean", "jak"));
+        eleves.add(this.createEleveWithName("JEAN", "Jack"));
 
         return eleves;
     }
@@ -31,9 +32,9 @@ public class Populator {
     public ArrayList<Eleve> createM1Eleves() {
         ArrayList eleves = new ArrayList();
 
-        eleves.add(this.createEleveWithName("Jacky", "Piere"));
+        eleves.add(this.createEleveWithName("JACKY", "Pierre"));
         eleves.add(this.createEleveWithName("DENIAU", "Antonin"));
-        eleves.add(this.createEleveWithName("Jean", "Paul"));
+        eleves.add(this.createEleveWithName("JEAN", "Paul"));
 
         return eleves;
     }
@@ -51,5 +52,10 @@ public class Populator {
         eleve.setPrenom(lastname);
 
         return eleve;
+    }
+
+    public Idea createIdea(Eleve el){
+        Idea idea = new Idea("Demonstration","Demonstration des idées",el);
+        return idea;
     }
 }
